@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float } from "@react-three/drei";
 
 import PulauTerapung3D from "../../../components/KalkulatorAnimation3D";
+import { type Variants } from "framer-motion"
 
 // --- KOMPONEN UTAMA KALKULATOR ---
 export default function HalamanKalkulator() {
@@ -71,15 +72,13 @@ export default function HalamanKalkulator() {
     }
   };
 
-  const variasiElemen = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0, 
-      transition: { type: "spring", stiffness: 250, damping: 20 } 
-    }
-  };
+const variasiElemen: Variants = {
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  show: {
+    opacity: 1, scale: 1, y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 10 }
+  }
+}
 
   // --- SUB-KOMPONEN KARTU INPUT INTERAKTIF ---
   const KartuInteraktif = ({ judul, icon: Ikon, nilai, batasMaksimal, satuan, kunciData }: any) => {
