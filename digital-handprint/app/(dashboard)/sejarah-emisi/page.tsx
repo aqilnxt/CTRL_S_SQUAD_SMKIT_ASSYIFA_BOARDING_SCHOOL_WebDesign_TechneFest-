@@ -86,7 +86,7 @@ export default function SejarahEmisiPage() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 90, damping: 14 },
+      transition: { type: "spring" as const, stiffness: 90, damping: 14 },
     },
   };
 
@@ -95,7 +95,7 @@ export default function SejarahEmisiPage() {
     center: {
       x: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 180, damping: 18 },
+      transition: { type: "spring" as const, stiffness: 180, damping: 18 },
     },
     exit: (dir: number) => ({
       x: dir < 0 ? 80 : -80,
